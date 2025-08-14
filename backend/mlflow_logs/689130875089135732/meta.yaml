@@ -1,0 +1,6 @@
+artifact_location: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732
+creation_time: 1753192914756
+experiment_id: '689130875089135732'
+last_update_time: 1753192914756
+lifecycle_stage: active
+name: translation_service

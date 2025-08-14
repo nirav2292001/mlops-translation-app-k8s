@@ -1,0 +1,14 @@
+artifact_uri: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732/6b3b742b240443978dccbc1fe867351d/artifacts
+end_time: 1753192933490
+entry_point_name: ''
+experiment_id: '689130875089135732'
+lifecycle_stage: active
+run_id: 6b3b742b240443978dccbc1fe867351d
+run_name: rebellious-koi-899
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753192933142
+status: 3
+tags: []
+user_id: root

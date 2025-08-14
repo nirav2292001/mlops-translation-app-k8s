@@ -1,0 +1,14 @@
+artifact_uri: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732/955d23610ea9429ca2af31f66f2d1278/artifacts
+end_time: 1755172631009
+entry_point_name: ''
+experiment_id: '689130875089135732'
+lifecycle_stage: active
+run_id: 955d23610ea9429ca2af31f66f2d1278
+run_name: fun-fox-904
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755172630801
+status: 4
+tags: []
+user_id: niravdhimmar

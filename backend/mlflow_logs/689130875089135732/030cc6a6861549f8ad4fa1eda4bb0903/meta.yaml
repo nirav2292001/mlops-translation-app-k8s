@@ -1,0 +1,14 @@
+artifact_uri: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732/030cc6a6861549f8ad4fa1eda4bb0903/artifacts
+end_time: 1753193102274
+entry_point_name: ''
+experiment_id: '689130875089135732'
+lifecycle_stage: active
+run_id: 030cc6a6861549f8ad4fa1eda4bb0903
+run_name: monumental-snake-23
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753193102004
+status: 3
+tags: []
+user_id: root

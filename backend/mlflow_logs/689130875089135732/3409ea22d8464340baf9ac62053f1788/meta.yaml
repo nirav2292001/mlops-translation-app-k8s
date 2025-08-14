@@ -1,0 +1,14 @@
+artifact_uri: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732/3409ea22d8464340baf9ac62053f1788/artifacts
+end_time: 1753193153196
+entry_point_name: ''
+experiment_id: '689130875089135732'
+lifecycle_stage: active
+run_id: 3409ea22d8464340baf9ac62053f1788
+run_name: defiant-snipe-42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753193152839
+status: 3
+tags: []
+user_id: root

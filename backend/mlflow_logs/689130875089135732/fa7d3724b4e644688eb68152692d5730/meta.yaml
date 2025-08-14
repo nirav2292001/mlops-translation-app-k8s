@@ -1,0 +1,14 @@
+artifact_uri: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732/fa7d3724b4e644688eb68152692d5730/artifacts
+end_time: 1753193093608
+entry_point_name: ''
+experiment_id: '689130875089135732'
+lifecycle_stage: active
+run_id: fa7d3724b4e644688eb68152692d5730
+run_name: orderly-croc-794
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753193092861
+status: 3
+tags: []
+user_id: root

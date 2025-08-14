@@ -1,0 +1,14 @@
+artifact_uri: file:///home/ubuntu/mlops-pipeline/app/mlflow_logs/689130875089135732/4834d562b769414cbb350da41079125a/artifacts
+end_time: 1753193159663
+entry_point_name: ''
+experiment_id: '689130875089135732'
+lifecycle_stage: active
+run_id: 4834d562b769414cbb350da41079125a
+run_name: chill-cub-227
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753193159323
+status: 3
+tags: []
+user_id: root
