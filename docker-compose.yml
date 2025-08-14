@@ -64,7 +64,11 @@ services:
       - "3000:80"
     environment:
       - REACT_APP_API_URL=${REACT_APP_API_URL}
-      # Add other environment variables needed at runtime
+      - NODE_ENV=production
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+      - /app/node_modules
     networks:
       - app-network
     depends_on:
