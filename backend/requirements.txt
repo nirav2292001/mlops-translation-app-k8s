@@ -4,3 +4,5 @@ transformers
 torch
 sentencepiece
 mlflow
+pymongo>=4.3.0
+python-dotenv>=0.19.0
