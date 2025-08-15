@@ -9,38 +9,6 @@ services:
       - "${BACKEND_PORT}:8000"
     volumes:
       - ./backend/mlflow_logs:/mlflow_logs 
-    environment:
-      - MONGODB_URL=mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017/${MONGO_INITDB_DATABASE}?authSource=admin
-    networks:
-      - app-network
-    depends_on:
-      - mongodb
-
-  mongodb:
-    image: mongo:6.0
-    container_name: mongodb
-    ports:
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-    volumes:
-      - mongodb_data:/data/db
-    networks:
-      - app-network
-
-  mongo-express:
-    image: mongo-express:1.0.0
-    container_name: mongo-express
-    ports:
-      - "8081:8081"
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_BASICAUTH_USERNAME=admin
-      - ME_CONFIG_BASICAUTH_PASSWORD=admin
-    depends_on:
-      - mongodb
     networks:
       - app-network
 
@@ -54,26 +22,21 @@ services:
     networks:
       - app-network
 
-  frontend:
+  frontend-blue:
     build:
       context: ./frontend
       args:
-        - REACT_APP_API_URL=${REACT_APP_API_URL}
-    container_name: react-frontend
-    ports:
-      - "3000:80"
+        REACT_APP_API_URL: ${REACT_APP_API_URL}
+    container_name: react-frontend-blue
+    expose:
+      - "80"
     environment:
       - REACT_APP_API_URL=${REACT_APP_API_URL}
-      - NODE_ENV=production
-    volumes:
-      - ./frontend/src:/app/src
-      - ./frontend/public:/app/public
-      - /app/node_modules
     networks:
       - app-network
     depends_on:
       - backend
-    restart: unless-stopped
+
 
   nginx:
     image: nginx:alpine
@@ -81,16 +44,13 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - frontend
-      - backend
+      - frontend-blue
     networks:
       - app-network
+      
 
 networks:
   app-network:
     driver: bridge
-
-volumes:
-  mongodb_data:
