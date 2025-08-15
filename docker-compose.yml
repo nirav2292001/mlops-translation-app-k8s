@@ -15,7 +15,7 @@ services:
   mlflow-ui:
     image: ghcr.io/mlflow/mlflow:v2.12.1
     ports:
-      - "5000:5000"
+      - "5001:5000"
     command: mlflow ui --backend-store-uri /mlflow_logs --host 0.0.0.0 --port 5000
     volumes:
       - ./backend/mlflow_logs:/mlflow_logs
