@@ -41,3 +41,4 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/${{ matrix.name }}:${{ env.COMMIT_ID }}
             ${{ secrets.DOCKER_USERNAME }}/${{ matrix.name }}:latest
+          platforms: linux/amd64,linux/arm64
