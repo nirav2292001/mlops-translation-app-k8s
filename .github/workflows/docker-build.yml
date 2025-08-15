@@ -14,10 +14,8 @@ jobs:
         include:
           - name: backend
             path: ./backend
-          - name: frontend-blue
-            path: ./frontend-blue
-          - name: nginx
-            path: ./nginx
+          - name: frontend
+            path: ./frontend
 
     steps:
       - name: Checkout
