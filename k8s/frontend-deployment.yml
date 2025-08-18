@@ -2,7 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    app: frontend
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -15,7 +18,12 @@ spec:
       - name: frontend
         image: nirav22092001/frontend:latest
         ports:
-        - containerPort: 3000
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        env:
+        - name: REACT_APP_API_URL
+          value: "http://myapp.local/api"
         resources:
           requests:
             memory: "64Mi"
@@ -23,3 +31,15 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3

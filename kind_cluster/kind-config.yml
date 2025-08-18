@@ -2,4 +2,9 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
   - role: control-plane
+    extraPortMappings:
+      - containerPort: 80    # map Ingress HTTP
+        hostPort: 9092
+
   - role: worker
+
